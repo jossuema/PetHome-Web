@@ -16,7 +16,7 @@ public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private long Id;
     private String Nombre;
     private String Raza;
     private String Dueno;
