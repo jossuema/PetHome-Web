@@ -32,7 +32,7 @@ public class ProductController {
         return ResponseEntity.ok(products);
     }
 
-    @PostMapping()
+    @PostMapping(produces = "application/json")
     public ResponseEntity<Product> createProduct(@RequestBody Product pr){
         Product prr = productController.save(pr);
         return ResponseEntity.status(HttpStatus.CREATED).body(prr);

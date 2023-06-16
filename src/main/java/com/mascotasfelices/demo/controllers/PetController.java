@@ -32,10 +32,10 @@ public class PetController {
         return ResponseEntity.ok(clients);
     }
 
-    @PostMapping()
+    @PostMapping(produces = "application/json")
     public ResponseEntity<Pet> createClient(@RequestBody Pet pt){
         Pet ptt = petController.save(pt);
-        return ResponseEntity.status(HttpStatus.CREATED).body(pt);
+        return ResponseEntity.status(HttpStatus.CREATED).body(ptt);
     }
 
     @DeleteMapping(value = "/{id}")

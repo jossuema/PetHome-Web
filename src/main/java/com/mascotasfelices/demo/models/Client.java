@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @Data
@@ -16,12 +17,26 @@ import java.io.Serializable;
 @Table(name = "clients")
 public class Client implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long Id;
+
+    @Column(name = "cedula")
     private String Cedula;
+
+    @Column(name = "nombre")
     private String Nombre;
+
+    @Column(name = "apellido")
     private String Apellido;
+
+    @Column(name = "email")
     private String Email;
+
+    @Column(name = "telefono")
     private String Telefono;
 }

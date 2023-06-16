@@ -32,7 +32,7 @@ public class ClientController {
         return ResponseEntity.ok(clients);
     }
 
-    @PostMapping()
+    @PostMapping(produces = "application/json")
     public ResponseEntity<Client> createClient(@RequestBody Client cl){
         Client cll = clientController.save(cl);
         return ResponseEntity.status(HttpStatus.CREATED).body(cll);
